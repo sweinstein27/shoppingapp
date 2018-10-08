@@ -11,11 +11,12 @@ class UsersController < ApplicationController
     end
   
     def create
+        binding.pry
       @user = User.new(user_params)
       respond_to do |format|
         if @user.save
           session[:user_id] = @user.id
-          format.html { redirect_to user_path(@user) }
+          format.html { redirect_to user_path(@user), notice: "welcome!" }
         else
           format.html { render :new }
         end
@@ -45,7 +46,7 @@ class UsersController < ApplicationController
       def user_params
         params.require(:user).permit(
           :name,
-          :password,
+          :password_digest,
           :email,
           :admin
         )
