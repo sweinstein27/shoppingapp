@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
     end
   
     def show
-      @ride = Ride.new
+      @product = Product.find_by_id(params[:id])
     end
   
     def new

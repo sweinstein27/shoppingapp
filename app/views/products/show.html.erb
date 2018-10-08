@@ -4,19 +4,8 @@
 
   <div class="info">
     <p><strong>Name:</strong> <%= @product.name %></p>
-    <p><strong>Total Number of Users:</strong> <%= @product.users.count %></p>
     <p><strong>Product Cost:</strong> <%= @product.cost %></p>
-    <p><strong>Description:</strong> <%= @product.cost %> inches</p>
-    <% if current_user.admin %>
-      <%= link_to 'Edit Product', [:edit, @product] %></p>
-    <% else %>
-      <form action="/cart/new" method="post">
-        <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
-        <%= tag(:input, :type => "hidden", :name => :user_id, :value => current_user.id) %>
-        <%= tag(:input, :type => "hidden", :name => :product_id, :value => @product.id) %>
-        <input class="btn btn-light" type="submit" value="Go on this ride">
-      </form>
-    <% end %>
-    <%= link_to 'Back', products_path,class: "btn btn-primary btn-light" %></p>
+    <p><strong>Description:</strong> <%= @product.description %></p>
+   
   </div>
 </div>s
