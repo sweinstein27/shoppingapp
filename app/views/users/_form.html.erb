@@ -29,6 +29,8 @@
       <%= f.label :password %>
       <br>
       <%= f.password_field :password, class: "form-control" %>
+
+      <%= hidden_field_tag :id, @user.id %>
   
     <div class="actions">
       <%= f.submit class: "btn btn-primary" %>
