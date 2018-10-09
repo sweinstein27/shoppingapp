@@ -1,4 +1,5 @@
 class Product < ActiveRecord::Base
-    has_many :carts
-    has_many :users, :through => :carts
-  end
+  has_many :order_items
+
+  default_scope { where(active: true) }
+end
