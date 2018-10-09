@@ -53,7 +53,7 @@ class ProductsController < ApplicationController
         params.require(:product).permit(
           :name,
           :description,
-          :cost
+          :price
         )
       end
   

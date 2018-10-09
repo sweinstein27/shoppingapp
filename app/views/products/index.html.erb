@@ -11,18 +11,18 @@
     <tr> 
       <td><strong>Name</strong></td>
       <td><strong>Description</strong></td>
-      <td><strong>Cost</strong></td>
+      <td><strong>price</strong></td>
     </tr>
     <% @products.each do |product| %>
       <tr>
 
         <td><%= product.name %></td>
-        <td><%= product.cost %></td>
+        <td><%= product.price %></td>
         <td><%= product.description %></td>
         <% if current_user.admin %>
           <td><%= link_to "Show #{product.name}", product_path(product) %></td>
         <% else %>
-          <td><%= link_to "Go on #{product.name}", product_path(product) %></td>
+          <td><%= link_to "Go to #{product.name}", product_path(product) %></td>
         <% end %>
       </tr>
     <% end %>
