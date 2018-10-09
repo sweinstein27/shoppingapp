@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
-  root "static_pages#home"
-  get "/signin", to: "sessions#new"
-  post "/sessions/create", to: "sessions#create"
-  delete "/signout", to: "sessions#destroy"
-  post "/rides/new", to: "rides#new"
-  resources :products
-  resources :users
+  resources :products, only: [:index]
+  resource :cart, only: [:show]
+  resources :order_items, only: [:create, :update, :destroy]
+  root to: "products#index"
 end
+
