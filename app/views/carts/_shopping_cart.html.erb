@@ -15,4 +15,7 @@
   <% @order_items.each do |order_item| %>
     <%= render 'carts/cart_row', product: order_item.product, order_item: order_item, show_total: true %>
   <% end %>
+  
+  <h4 class="text-right">SubTotal: <span style="color: green"><%= @subtotal %></span></h4>
+
 <% end %>
